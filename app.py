@@ -19,6 +19,10 @@ app = Flask(__name__)
 # print(data["patientName"])
 
 
+@app.route("/", methods=["get")
+def hello():
+    return "<h1 style='color:blue'>Hello There!</h1>"
+
 @app.route("/", methods=["get", "post"])
 def reply():
     text = request.form.get("Body")
@@ -226,4 +230,4 @@ def reply():
 
 
 if __name__ == "__main__":
-    app.run(port=5000)
+    app.run()
